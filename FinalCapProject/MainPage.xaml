@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns:local="clr-namespace:FinalCapProject.Class"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalCapProject.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+
+            <Label Text="Inserisci il paese e il codice postale" 
+               FontSize="24" 
+               FontAttributes="Bold"
+               TextColor="#333333"
+               HorizontalOptions="Center" />
+
+            <Entry x:Name="CountryEntry" 
+               Placeholder="Abbreviazione Paese (es: IT)" 
+               Keyboard="Text" 
+               BackgroundColor="White" 
+               TextColor="Black" 
+               HorizontalTextAlignment="Center"
+               PlaceholderColor="#AAAAAA"
+               FontSize="18"
+               HorizontalOptions="Fill" 
+               Margin="0,10,0,10"/>
+
+            <Entry x:Name="PostalCodeEntry" 
+               Placeholder="Codice Postale" 
+               Keyboard="Numeric" 
+               BackgroundColor="White" 
+               TextColor="Black" 
+               HorizontalTextAlignment="Center"
+               PlaceholderColor="#AAAAAA"
+               FontSize="18"
+               HorizontalOptions="Fill" 
+               Margin="0,10,0,10"/>
+
+            <Button x:Name="Check" 
+                Text="Verifica" 
+                BackgroundColor="#007ACC" 
+                TextColor="White" 
+                CornerRadius="10" 
+                FontSize="18"
+                Padding="10"
+                WidthRequest="150"
+                HorizontalOptions="Center" />
+
+            <!-- ListView per visualizzare i risultati -->
+            <ListView x:Name="ResultsListView" RowHeight="60" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:PlaceCell />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
